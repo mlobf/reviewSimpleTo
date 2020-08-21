@@ -1,0 +1,34 @@
+Create project todowoo
+Create app todo
+
+
+    1-Alterar o settings
+
+
+        INSTALLED_APPS = [
+            'django.contrib.admin',
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+        ->  'todo',
+        ]
+
+
+    2-Make url
+
+       ->  path('signup/', views.signupuser, name='signupuser')
+    
+    3-Make view 
+
+       -> def signupuser(request):
+            return render(request,'todo/signupuser.html')
+
+    4-Make template
+    
+
+
+GET = JUST RECEIVE INFORMATION
+POST = CREATE DELETE 
+

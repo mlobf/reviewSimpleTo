@@ -1,5 +1,4 @@
 """todowoo URL Configuration
-
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
 Examples:
@@ -21,7 +20,9 @@ from todo import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('signup/', views.signupuser, name='signupuser')
+    path('signup/', views.signupuser, name='signupuser'),
+    path('current/', views.currenttodos, name='currenttodos'),
+
 ]
 
 

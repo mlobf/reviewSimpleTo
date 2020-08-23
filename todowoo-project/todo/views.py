@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout
@@ -22,8 +22,21 @@ def signupuser(request):
         else:
             return render(request, 'todo/signupuser.html',{'form':UserCreationForm(),'error':'Passwords did not match'})
 
+
+def loginuser(request):
+    if request.method =='GET':
+        return render(request, 'todo/loginuser.html', {'form':AuthenticationForm()})
+    else:
+        if request.POST['password1'] == request.POST['password2']:
+            try:
+                pass
+            except:
+                pass
+
+
+
 def logoutuser(request):
-    #Shall Logout only if was a POST.
+    #We Shall Logout only if was a POST.
     #Some browsers in order to make things faster, the craw all GET links and load it. 
     # If logout was get, the user will be always login out without own will.
    if request.method =='POST':
